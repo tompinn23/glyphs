@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When scanning one body of a binary pair, you will get an event detailing the orbital parameters of their BaryCentre",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "StarSystem": {
+      "title": "StarSystem",
+      "type": "string",
+      "examples": [
+        "Turdet",
+        "Arietis Sector ZF-O b6-1",
+        "Burigpa"
+      ]
+    },
+    "SystemAddress": {
+      "title": "SystemAddress",
+      "type": "integer",
+      "examples": [
+        7269097743753,
+        2868635248009,
+        669880427913
+      ]
+    },
+    "BodyID": {
+      "title": "BodyID",
+      "type": "integer",
+      "examples": [
+        1,
+        2,
+        36
+      ]
+    },
+    "SemiMajorAxis": {
+      "title": "SemiMajorAxis",
+      "type": "number",
+      "examples": [
+        13380128741.264343,
+        45344798564910.89,
+        112775021791.45813
+      ]
+    },
+    "Eccentricity": {
+      "title": "Eccentricity",
+      "type": "number",
+      "examples": [
+        0.059955,
+        0.192351,
+        0.113812
+      ]
+    },
+    "OrbitalInclination": {
+      "title": "OrbitalInclination",
+      "type": "number",
+      "examples": [
+        -40.157093,
+        -5.839172,
+        93.686874
+      ]
+    },
+    "Periapsis": {
+      "title": "Periapsis",
+      "type": "number",
+      "examples": [
+        65.170837,
+        332.975557,
+        88.077519
+      ]
+    },
+    "OrbitalPeriod": {
+      "title": "OrbitalPeriod",
+      "type": "number",
+      "examples": [
+        7033498.644829,
+        738302832841.8732,
+        181543731.689453
+      ]
+    },
+    "AscendingNode": {
+      "title": "AscendingNode",
+      "type": "number",
+      "examples": [
+        -120.920443,
+        131.83321,
+        80.449766
+      ]
+    },
+    "MeanAnomaly": {
+      "title": "MeanAnomaly",
+      "type": "number",
+      "examples": [
+        50.230625,
+        334.799505,
+        111.542564
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "AscendingNode",
+    "BodyID",
+    "Eccentricity",
+    "MeanAnomaly",
+    "OrbitalInclination",
+    "OrbitalPeriod",
+    "Periapsis",
+    "SemiMajorAxis",
+    "StarSystem",
+    "SystemAddress",
+    "event",
+    "timestamp"
+  ]
+}

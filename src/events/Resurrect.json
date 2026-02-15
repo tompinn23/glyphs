@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when the player restarts after death",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Option": {
+      "title": "Option",
+      "description": "The option selected on the insurance rebuy screen",
+      "type": "string",
+      "examples": [
+        "recover",
+        "rebuy",
+        "handin"
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "description": "The price paid",
+      "type": "integer",
+      "examples": [
+        7575,
+        4500,
+        1744947
+      ]
+    },
+    "Bankrupt": {
+      "title": "Bankrupt",
+      "description": "Whether the commander declared bankruptcy",
+      "type": "boolean",
+      "examples": [
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Bankrupt",
+    "Cost",
+    "Option",
+    "event",
+    "timestamp"
+  ]
+}

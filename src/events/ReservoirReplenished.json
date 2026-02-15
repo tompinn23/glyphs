@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When fuel is moved from one fuel tank to another",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "FuelMain": {
+      "title": "FuelMain",
+      "type": "number",
+      "examples": [
+        31.243063,
+        30.613064,
+        29.85668
+      ]
+    },
+    "FuelReservoir": {
+      "title": "FuelReservoir",
+      "type": "number",
+      "examples": [
+        0.63,
+        0.74,
+        1.13
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "FuelMain",
+    "FuelReservoir",
+    "event",
+    "timestamp"
+  ]
+}

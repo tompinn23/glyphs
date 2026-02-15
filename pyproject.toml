@@ -1,0 +1,39 @@
+[project]
+name = "glyphs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tom Pinnock", email = "tom.pinnock@yonside.org.uk" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "anyio>=4.12.1",
+    "trio>=0.32.0",
+]
+
+[tool.scikit-build]
+minimum-version = "build-system.requires"
+build-dir = "build/{wheel_tag}"
+ninja.make-fallback = false
+cmake.args = ["-G", "Ninja"]
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.{h,c,hpp,cpp}" }, { file = "CMakeLists.txt" }]
+
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
+
+[tool.scikit-build.editable]
+mode = "redirect"        # or "inplace"
+verbose = true           # Show rebuild output
+rebuild = false          # Auto-rebuild on import
+
+[tool.uv.pip]
+no-build-isolation-package = ["glyphs",]

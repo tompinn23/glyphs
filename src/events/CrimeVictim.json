@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when another player commits a crime against the current player",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Offender": {
+      "title": "Offender",
+      "type": "string",
+      "examples": [
+        "jixxed",
+        "Sam Ishum",
+        "Jake Larson"
+      ]
+    },
+    "Offender_Localised": {
+      "title": "Offender_Localised",
+      "type": "string",
+      "examples": [
+        "jixxed",
+        "Sam Ishum",
+        "Jake Larson"
+      ]
+    },
+    "CrimeType": {
+      "title": "CrimeType",
+      "type": "string",
+      "examples": [
+        "onFoot_identityTheft",
+        "assault",
+        "onFoot_failureToSubmitToPolice"
+      ]
+    },
+    "Fine": {
+      "title": "Fine",
+      "description": "Fine or Bounty",
+      "type": "integer",
+      "examples": [
+        500
+      ]
+    },
+    "Bounty": {
+      "title": "Bounty",
+      "description": "Fine or Bounty",
+      "type": "integer",
+      "examples": [
+        600,
+        450,
+        300
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "CrimeType",
+    "Offender",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when synthesis is used to repair or rearm",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "description": "Synthesis blueprint",
+      "type": "string",
+      "examples": [
+        "Life Support Basic",
+        "FSD Basic",
+        "Limpet Basic"
+      ]
+    },
+    "Materials": {
+      "title": "Materials",
+      "description": "Materials used with quantities",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "title": "Name",
+            "type": "string",
+            "examples": [
+              "iron",
+              "nickel",
+              "carbon"
+            ]
+          },
+          "Count": {
+            "title": "Count",
+            "type": "integer",
+            "examples": [
+              2,
+              1,
+              10
+            ]
+          },
+          "Name_Localised": {
+            "title": "Name_Localised",
+            "type": "string",
+            "examples": [
+              "Focus Crystals",
+              "Guardian Power Conduit",
+              "Guardian Wreckage Components"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "Name",
+          "Count"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Materials",
+    "Name",
+    "event",
+    "timestamp"
+  ]
+}

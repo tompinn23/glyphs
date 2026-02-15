@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when the player's ship has been repaired by a repair drone. Each of the values indicate the amount of damage that has been repaired",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "HullRepaired": {
+      "title": "HullRepaired",
+      "type": "number",
+      "examples": [
+        310.007385,
+        310.007324,
+        309.998169
+      ]
+    },
+    "CockpitRepaired": {
+      "title": "CockpitRepaired",
+      "type": "number",
+      "examples": [
+        4.391763,
+        0.02048,
+        0.2048
+      ]
+    },
+    "CorrosionRepaired": {
+      "title": "CorrosionRepaired",
+      "type": "number",
+      "examples": [
+        24.0,
+        10.0,
+        30.0
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "event",
+    "timestamp"
+  ]
+}

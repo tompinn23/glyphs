@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when a mission has been abandoned",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "type": "string",
+      "examples": [
+        "Mission_AltruismCredits_name",
+        "Mission_HackMegaship_name",
+        "Mission_OnFoot_SalvageIllegal_MB_name"
+      ]
+    },
+    "LocalisedName": {
+      "title": "LocalisedName",
+      "type": "string",
+      "examples": [
+        "Turn on power at Walter Drilling Platform"
+      ]
+    },
+    "MissionID": {
+      "title": "MissionID",
+      "type": "integer",
+      "examples": [
+        895910576,
+        895910565,
+        897152407
+      ]
+    },
+    "Fine": {
+      "title": "Fine",
+      "type": "integer",
+      "examples": [
+        10000
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "MissionID",
+    "Name",
+    "event",
+    "timestamp"
+  ]
+}

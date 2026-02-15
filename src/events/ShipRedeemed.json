@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: after a new ship has been redeemed",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "ShipType": {
+      "title": "ShipType",
+      "type": "string",
+      "examples": [
+        "python_nx"
+      ]
+    },
+    "ShipType_Localised": {
+      "title": "ShipType_Localised",
+      "type": "string",
+      "examples": [
+        "Python Mk II"
+      ]
+    },
+    "NewShipID": {
+      "title": "NewShipID",
+      "type": "integer",
+      "examples": [
+        34,
+        38,
+        39
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "NewShipID",
+    "ShipType",
+    "event",
+    "timestamp"
+  ]
+}

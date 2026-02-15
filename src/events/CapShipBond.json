@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: The player has been rewarded for a capital ship combat",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Reward": {
+      "title": "Reward",
+      "type": "integer",
+      "examples": [
+        500000
+      ]
+    },
+    "AwardingFaction": {
+      "title": "AwardingFaction",
+      "type": "string",
+      "examples": [
+        "Eurybia Blue Mafia"
+      ]
+    },
+    "VictimFaction": {
+      "title": "VictimFaction",
+      "type": "string",
+      "examples": [
+        "Keltim Empire League"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "AwardingFaction",
+    "Reward",
+    "VictimFaction",
+    "event",
+    "timestamp"
+  ]
+}

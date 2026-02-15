@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when refuelling (10%)",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "description": "Cost of fuel",
+      "type": "integer",
+      "examples": [
+        110,
+        675,
+        833
+      ]
+    },
+    "Amount": {
+      "title": "Amount",
+      "description": "Tons of fuel purchased",
+      "type": "number",
+      "examples": [
+        2.181443,
+        13.483213,
+        16.645557
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Amount",
+    "Cost",
+    "event",
+    "timestamp"
+  ]
+}

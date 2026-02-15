@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: Player has escaped interdiction",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Interdictor": {
+      "title": "Interdictor",
+      "type": "string",
+      "examples": [
+        "$ShipName_Police_Independent;",
+        "Markus Klaus",
+        "Bob Royall"
+      ]
+    },
+    "Interdictor_Localised": {
+      "title": "Interdictor_Localised",
+      "type": "string",
+      "examples": [
+        "System Authority Vessel",
+        "Federal Security Service",
+        "Internal Security Service"
+      ]
+    },
+    "IsPlayer": {
+      "title": "IsPlayer",
+      "description": "Whether player or npc",
+      "type": "boolean",
+      "examples": [
+        false
+      ]
+    },
+    "IsThargoid": {
+      "title": "IsThargoid",
+      "description": "Whether thargoid",
+      "type": "boolean",
+      "examples": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Interdictor",
+    "IsPlayer",
+    "event",
+    "timestamp"
+  ]
+}

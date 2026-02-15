@@ -1,0 +1,4 @@
+#include "PowerplayJoin.hpp"
+#include "factory.hpp"
+
+template event make_event<hue::powerplay_join>(const nlohmann::json &j);

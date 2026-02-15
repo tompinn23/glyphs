@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when the station denies a docking request",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Reason": {
+      "title": "Reason",
+      "type": "string",
+      "examples": [
+        "TooLarge",
+        "NoSpace",
+        "Distance"
+      ]
+    },
+    "MarketID": {
+      "title": "MarketID",
+      "type": "integer",
+      "examples": [
+        3887632640,
+        3859236096,
+        3223389440
+      ]
+    },
+    "StationName": {
+      "title": "StationName",
+      "type": "string",
+      "examples": [
+        "A1A-B2B",
+        "Shinn Enterprise",
+        "$EXT_PANEL_ColonisationShip:#index=1;"
+      ]
+    },
+    "StationName_Localised": {
+      "title": "StationName_Localised",
+      "type": "string",
+      "examples": [
+        "System Colonisation Ship"
+      ]
+    },
+    "StationType": {
+      "title": "StationType",
+      "type": "string",
+      "examples": [
+        "OnFootSettlement",
+        "Outpost",
+        "FleetCarrier"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "MarketID",
+    "Reason",
+    "StationName",
+    "StationType",
+    "event",
+    "timestamp"
+  ]
+}

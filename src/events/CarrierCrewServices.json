@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Changes to crew",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "CarrierID": {
+      "title": "CarrierID",
+      "type": "integer",
+      "examples": [
+        3705689344,
+        3707430144,
+        3705124096
+      ]
+    },
+    "CrewRole": {
+      "title": "CrewRole",
+      "type": "string",
+      "examples": [
+        "Bartender",
+        "VistaGenomics",
+        "PioneerSupplies"
+      ]
+    },
+    "CarrierType": {
+      "title": "CarrierType",
+      "type": "string",
+      "examples": [
+        "FleetCarrier",
+        "SquadronCarrier"
+      ]
+    },
+    "Operation": {
+      "title": "Operation",
+      "type": "string",
+      "examples": [
+        "Activate",
+        "Replace",
+        "Deactivate",
+        "Resume",
+        "Pause"
+      ]
+    },
+    "CrewName": {
+      "title": "CrewName",
+      "type": "string",
+      "examples": [
+        "Kareem Pickett",
+        "Floyd Hughes",
+        "Coleman Sims"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "CarrierID",
+    "CrewName",
+    "CrewRole",
+    "Operation",
+    "event",
+    "timestamp"
+  ]
+}

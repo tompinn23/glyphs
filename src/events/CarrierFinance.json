@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Change to tax rate or reserve",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "CarrierID": {
+      "title": "CarrierID",
+      "type": "integer",
+      "examples": [
+        3705689344,
+        3705124096
+      ]
+    },
+    "CarrierType": {
+      "title": "CarrierType",
+      "type": "string",
+      "examples": [
+        "FleetCarrier",
+        "SquadronCarrier"
+      ]
+    },
+    "CarrierBalance": {
+      "title": "CarrierBalance",
+      "type": "integer",
+      "examples": [
+        1660931542,
+        565786612,
+        1083237005
+      ]
+    },
+    "ReserveBalance": {
+      "title": "ReserveBalance",
+      "type": "integer",
+      "examples": [
+        127749688,
+        0,
+        60000000
+      ]
+    },
+    "AvailableBalance": {
+      "title": "AvailableBalance",
+      "type": "integer",
+      "examples": [
+        1483671510,
+        437798365,
+        955487317
+      ]
+    },
+    "ReservePercent": {
+      "title": "ReservePercent",
+      "type": "integer",
+      "examples": [
+        8,
+        23,
+        12
+      ]
+    },
+    "TaxRate_pioneersupplies": {
+      "title": "TaxRate_pioneersupplies",
+      "type": "integer",
+      "examples": [
+        25,
+        100
+      ]
+    },
+    "TaxRate_shipyard": {
+      "title": "TaxRate_shipyard",
+      "type": "integer",
+      "examples": [
+        25
+      ]
+    },
+    "TaxRate_rearm": {
+      "title": "TaxRate_rearm",
+      "type": "integer",
+      "examples": [
+        25
+      ]
+    },
+    "TaxRate_outfitting": {
+      "title": "TaxRate_outfitting",
+      "type": "integer",
+      "examples": [
+        25
+      ]
+    },
+    "TaxRate_refuel": {
+      "title": "TaxRate_refuel",
+      "type": "integer",
+      "examples": [
+        25
+      ]
+    },
+    "TaxRate_repair": {
+      "title": "TaxRate_repair",
+      "type": "integer",
+      "examples": [
+        25
+      ]
+    },
+    "TaxRate": {
+      "title": "TaxRate",
+      "type": "integer",
+      "examples": [
+        40,
+        25,
+        7
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "AvailableBalance",
+    "CarrierBalance",
+    "CarrierID",
+    "ReserveBalance",
+    "ReservePercent",
+    "event",
+    "timestamp"
+  ]
+}

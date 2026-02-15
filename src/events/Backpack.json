@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Lists the contents of the backpack, in a separate backpack.json file",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Items": {
+      "title": "Items",
+      "type": "array",
+      "default": null,
+      "items": {
+        "$ref": "./ShipLockerBackpack.json#/definitions/Item"
+      }
+    },
+    "Components": {
+      "title": "Components",
+      "type": "array",
+      "default": null,
+      "items": {
+        "$ref": "./ShipLockerBackpack.json#/definitions/Component"
+      }
+    },
+    "Consumables": {
+      "title": "Consumables",
+      "type": "array",
+      "default": null,
+      "items": {
+        "$ref": "./ShipLockerBackpack.json#/definitions/Consumable"
+      }
+    },
+    "Data": {
+      "title": "Data",
+      "type": "array",
+      "default": null,
+      "items": {
+        "$ref": "./ShipLockerBackpack.json#/definitions/Data"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "event",
+    "timestamp"
+  ]
+}

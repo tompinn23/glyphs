@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when a player increases their access to an engineer",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Engineers": {
+      "title": "Engineers",
+      "description": "Summary at startup",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "object",
+        "properties": {
+          "Engineer": {
+            "title": "Engineer",
+            "type": "string",
+            "examples": [
+              "Hera Tani",
+              "The Sarge",
+              "Professor Palin"
+            ]
+          },
+          "EngineerID": {
+            "title": "EngineerID",
+            "type": "integer",
+            "examples": [
+              300090,
+              300040,
+              300220
+            ]
+          },
+          "Progress": {
+            "title": "Progress",
+            "type": "string",
+            "examples": [
+              "Unlocked",
+              "Invited",
+              "Known"
+            ]
+          },
+          "RankProgress": {
+            "title": "RankProgress",
+            "type": "integer",
+            "examples": [
+              0,
+              36,
+              3
+            ]
+          },
+          "Rank": {
+            "title": "Rank",
+            "type": "integer",
+            "examples": [
+              5,
+              0,
+              3
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "Engineer",
+          "EngineerID",
+          "Progress"
+        ]
+      }
+    },
+    "Engineer": {
+      "title": "Engineer",
+      "description": "Update for one engineer",
+      "type": "string",
+      "examples": [
+        "Zacariah Nemo",
+        "Lori Jameson",
+        "The Sarge"
+      ]
+    },
+    "EngineerID": {
+      "title": "EngineerID",
+      "description": "Update for one engineer",
+      "type": "integer",
+      "examples": [
+        300050,
+        300230,
+        300040
+      ]
+    },
+    "Progress": {
+      "title": "Progress",
+      "description": "Update for one engineer",
+      "type": "string",
+      "examples": [
+        "Unlocked",
+        "Invited"
+      ]
+    },
+    "Rank": {
+      "title": "Rank",
+      "description": "Update for one engineer",
+      "type": "integer",
+      "examples": [
+        1,
+        4,
+        5
+      ]
+    },
+    "RankProgress": {
+      "title": "RankProgress",
+      "description": "Uncertain whether this is actually logged",
+      "type": "integer",
+      "examples": [
+        0,
+        36,
+        3
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "event",
+    "timestamp"
+  ]
+}

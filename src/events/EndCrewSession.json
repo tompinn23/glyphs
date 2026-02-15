@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when the captain in multicrew disbands the crew",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "OnCrime": {
+      "title": "OnCrime",
+      "description": "true if crew disbanded as a result of a crime in a lawful session",
+      "type": "boolean",
+      "examples": [
+        true,
+        false
+      ]
+    },
+    "Telepresence": {
+      "title": "Telepresence",
+      "description": "only from Odyssey build",
+      "type": "boolean",
+      "examples": [
+        true
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "OnCrime",
+    "event",
+    "timestamp"
+  ]
+}

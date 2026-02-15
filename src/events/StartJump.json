@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: at the start of a Hyperspace or Supercruise jump (start of countdown)",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Taxi": {
+      "title": "Taxi",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    },
+    "JumpType": {
+      "title": "JumpType",
+      "type": "string",
+      "examples": [
+        "Hyperspace",
+        "Supercruise"
+      ]
+    },
+    "StarSystem": {
+      "title": "StarSystem",
+      "type": "string",
+      "examples": [
+        "Celaeno",
+        "Tascheter Sector EL-Y b5",
+        "LHS 1443"
+      ]
+    },
+    "SystemAddress": {
+      "title": "SystemAddress",
+      "type": "integer",
+      "examples": [
+        198875014308,
+        11665802143105,
+        5068732442009
+      ]
+    },
+    "StarClass": {
+      "title": "StarClass",
+      "description": "only for a hyperspace jump",
+      "type": "string",
+      "examples": [
+        "B",
+        "TTS",
+        "M"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "JumpType",
+    "event",
+    "timestamp"
+  ]
+}

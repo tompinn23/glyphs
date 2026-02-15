@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When discarding on-foot items from the player's inventory",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "type": "string",
+      "examples": [
+        "electricalfuse",
+        "epoxyadhesive",
+        "memorychip"
+      ]
+    },
+    "Name_Localised": {
+      "title": "Name_Localised",
+      "type": "string",
+      "examples": [
+        "Electrical Fuse",
+        "Epoxy Adhesive",
+        "Memory Chip"
+      ]
+    },
+    "Type": {
+      "title": "Type",
+      "type": "string",
+      "examples": [
+        "Component",
+        "Item",
+        "Data"
+      ]
+    },
+    "OwnerID": {
+      "title": "OwnerID",
+      "type": "integer",
+      "examples": [
+        0,
+        5352618,
+        175185
+      ]
+    },
+    "Count": {
+      "title": "Count",
+      "type": "integer",
+      "examples": [
+        2,
+        1,
+        3
+      ]
+    },
+    "MissionID": {
+      "title": "MissionID",
+      "type": "integer",
+      "examples": [
+        783435849,
+        787675873,
+        836665374
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Count",
+    "Name",
+    "OwnerID",
+    "Type",
+    "event",
+    "timestamp"
+  ]
+}

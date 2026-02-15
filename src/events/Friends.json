@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when receiving information about a change in a friend's status. Also written at startup for friends who are already online.",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Status": {
+      "title": "Status",
+      "description": "One of the following: Requested, Declined, Added, Lost, Offline, Online",
+      "type": "string",
+      "examples": [
+        "Online",
+        "Offline",
+        "Added"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "description": "the friend's commander name",
+      "type": "string",
+      "examples": [
+        "Alice",
+        "Bob",
+        "Mallory"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Name",
+    "Status",
+    "event",
+    "timestamp"
+  ]
+}

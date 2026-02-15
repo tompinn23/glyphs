@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when purchasing an SRV or Fighter",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Type": {
+      "title": "Type",
+      "type": "string",
+      "examples": [
+        "testbuggy",
+        "combat_multicrew_srv_01",
+        "independent_fighter"
+      ]
+    },
+    "Type_Localised": {
+      "title": "Type_Localised",
+      "type": "string",
+      "examples": [
+        "SRV Scarab",
+        "SRV Scorpion",
+        "Gu-97"
+      ]
+    },
+    "Loadout": {
+      "title": "Loadout",
+      "type": "string",
+      "examples": [
+        "starter",
+        "default",
+        "one"
+      ]
+    },
+    "ID": {
+      "title": "ID",
+      "type": "integer",
+      "examples": [
+        33,
+        37,
+        34
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "type": "integer",
+      "examples": [
+        5270,
+        5139,
+        1030
+      ]
+    },
+    "Count": {
+      "title": "Count",
+      "description": "Number of vehicles purchased",
+      "type": "integer",
+      "examples": [
+        1,
+        2
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Cost",
+    "Count",
+    "Loadout",
+    "Type",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when buying system data via the galaxy map",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "System": {
+      "title": "System",
+      "type": "string",
+      "examples": [
+        "Acokwus",
+        "BD-17 1955",
+        "HIP 90467"
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "type": "integer",
+      "examples": [
+        4850,
+        1762,
+        153
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Cost",
+    "System",
+    "event",
+    "timestamp"
+  ]
+}

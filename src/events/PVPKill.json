@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when this player has killed another player",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Victim": {
+      "title": "Victim",
+      "description": "Name of the victim",
+      "type": "string",
+      "examples": [
+        "Commander name"
+      ]
+    },
+    "CombatRank": {
+      "title": "CombatRank",
+      "description": "Victim’s rank in range 0..8",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8,
+      "examples": [
+        8,
+        6,
+        7
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "CombatRank",
+    "Victim",
+    "event",
+    "timestamp"
+  ]
+}

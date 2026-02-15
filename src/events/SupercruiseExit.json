@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: leaving supercruise for normal space",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Taxi": {
+      "title": "Taxi",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    },
+    "Multicrew": {
+      "title": "Multicrew",
+      "type": "boolean",
+      "examples": [
+        false
+      ]
+    },
+    "StarSystem": {
+      "title": "StarSystem",
+      "type": "string",
+      "examples": [
+        "Celaeno",
+        "Panoi",
+        "HIP 20485"
+      ]
+    },
+    "SystemAddress": {
+      "title": "SystemAddress",
+      "type": "integer",
+      "examples": [
+        198875014308,
+        6955800204002,
+        3657265287866
+      ]
+    },
+    "Body": {
+      "title": "Body",
+      "type": "string",
+      "examples": [
+        "Celaeno 2",
+        "Panoi",
+        "HIP 20485 A 1"
+      ]
+    },
+    "BodyID": {
+      "title": "BodyID",
+      "type": "integer",
+      "examples": [
+        10,
+        0,
+        11
+      ]
+    },
+    "BodyType": {
+      "title": "BodyType",
+      "type": "string",
+      "examples": [
+        "Planet",
+        "Star",
+        "Station"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Body",
+    "BodyID",
+    "BodyType",
+    "StarSystem",
+    "SystemAddress",
+    "event",
+    "timestamp"
+  ]
+}

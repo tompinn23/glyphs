@@ -1,0 +1,4 @@
+#include "PowerplaySalary.hpp"
+#include "factory.hpp"
+
+template event make_event<hue::powerplay_salary>(const nlohmann::json &j);

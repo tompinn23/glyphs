@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when scanning a data link",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Message identifier from data link",
+      "type": "string",
+      "examples": [
+        "$DATAPOINT_GAMEPLAY_complete;",
+        "$DataLink_ScannedInfo_Operations;",
+        "$DataLink_ScannedInfo_Power_2;"
+      ]
+    },
+    "Message_Localised": {
+      "title": "Message_Localised",
+      "description": "Localized message from data link",
+      "type": "string",
+      "examples": [
+        "Alert: All Data Point telemetry links established, Intel package created.",
+        "Op-Net accessed",
+        "Fuel routing system accessed"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Message",
+    "event",
+    "timestamp"
+  ]
+}

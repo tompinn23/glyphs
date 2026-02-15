@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "This event is logged when signing up to fight at a recruitment desk",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Retreat": {
+      "title": "Retreat",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "type": "integer",
+      "examples": [
+        0
+      ]
+    },
+    "DestinationSystem": {
+      "title": "DestinationSystem",
+      "type": "string",
+      "examples": [
+        "HIP 44137",
+        "Coriabog",
+        "Inmutha"
+      ]
+    },
+    "DestinationLocation": {
+      "title": "DestinationLocation",
+      "type": "string",
+      "examples": [
+        "Vidal Metallurgic Territory",
+        "Alexandrov Observatory",
+        "Singh Analytics Institution"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Cost",
+    "DestinationLocation",
+    "DestinationSystem",
+    "event",
+    "timestamp"
+  ]
+}

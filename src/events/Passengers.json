@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: at startup, when loading the saved game file",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Manifest": {
+      "title": "Manifest",
+      "description": "Array of passenger records",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "object",
+        "properties": {
+          "MissionID": {
+            "title": "MissionID",
+            "type": "integer",
+            "examples": [
+              799410896,
+              841578018,
+              841577937
+            ]
+          },
+          "Type": {
+            "title": "Type",
+            "type": "string",
+            "examples": [
+              "Explorer",
+              "Tourist",
+              "Business"
+            ]
+          },
+          "VIP": {
+            "title": "VIP",
+            "type": "boolean",
+            "examples": [
+              true
+            ]
+          },
+          "Wanted": {
+            "title": "Wanted",
+            "type": "boolean",
+            "examples": [
+              false,
+              true
+            ]
+          },
+          "Count": {
+            "title": "Count",
+            "type": "integer",
+            "examples": [
+              7,
+              9,
+              13
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "MissionID",
+          "Type",
+          "VIP",
+          "Wanted",
+          "Count"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Manifest",
+    "event",
+    "timestamp"
+  ]
+}

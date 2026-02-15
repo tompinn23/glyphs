@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when receiving payment for powerplay combat",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Power": {
+      "title": "Power",
+      "type": "string",
+      "examples": [
+        "Felicia Winters"
+      ]
+    },
+    "Systems": {
+      "title": "Systems",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "string",
+        "examples": [
+          "Lundji",
+          "Sol"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Power",
+    "Systems",
+    "event",
+    "timestamp"
+  ]
+}

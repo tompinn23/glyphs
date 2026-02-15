@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when launching a fighter",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Loadout": {
+      "title": "Loadout",
+      "type": "string",
+      "examples": [
+        "zero",
+        "one",
+        "three"
+      ]
+    },
+    "ID": {
+      "title": "ID",
+      "type": "integer",
+      "examples": [
+        68,
+        69,
+        25
+      ]
+    },
+    "PlayerControlled": {
+      "title": "PlayerControlled",
+      "description": "Whether player is controlling the fighter from launch",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ID",
+    "Loadout",
+    "PlayerControlled",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: entering supercruise from normal space",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Taxi": {
+      "title": "Taxi",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    },
+    "Multicrew": {
+      "title": "Multicrew",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    },
+    "StarSystem": {
+      "title": "StarSystem",
+      "type": "string",
+      "examples": [
+        "HIP 20485",
+        "Sol",
+        "Latorioson"
+      ]
+    },
+    "SystemAddress": {
+      "title": "SystemAddress",
+      "type": "integer",
+      "examples": [
+        3657265287866,
+        10477373803,
+        671222670713
+      ]
+    },
+    "Wanted": {
+      "title": "Wanted",
+      "type": "boolean",
+      "examples": [
+        false,
+        true
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "StarSystem",
+    "SystemAddress",
+    "event",
+    "timestamp"
+  ]
+}

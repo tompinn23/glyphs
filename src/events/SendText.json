@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when a text message is sent to another player",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "To": {
+      "title": "To",
+      "type": "string",
+      "examples": [
+        "Alice",
+        "Bob",
+        "Mallory"
+      ]
+    },
+    "To_Localised": {
+      "title": "To_Localised",
+      "description": "Unclear under which conditions this field is present, but it sometimes is.",
+      "type": "string",
+      "examples": [
+        "CMDR Alice",
+        "CMDR Bob",
+        "CMDR Mallory"
+      ]
+    },
+    "Message": {
+      "title": "Message",
+      "type": "string",
+      "examples": [
+        "CMDR Alice waved at CMDR Mallory",
+        "CMDR Bob waved at CMDR Alice",
+        "CMDR Mallory waved at CMDR Bob"
+      ]
+    },
+    "Sent": {
+      "title": "Sent",
+      "type": "boolean",
+      "examples": [
+        true
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Message",
+    "Sent",
+    "To",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: at startup, if player has pledged to a power",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Power": {
+      "title": "Power",
+      "type": "string",
+      "examples": [
+        "Li Yong-Rui",
+        "Aisling Duval"
+      ]
+    },
+    "Rank": {
+      "title": "Rank",
+      "type": "integer",
+      "examples": [
+        0,
+        3,
+        2
+      ]
+    },
+    "Merits": {
+      "title": "Merits",
+      "type": "integer",
+      "examples": [
+        0,
+        1260
+      ]
+    },
+    "Votes": {
+      "title": "Votes",
+      "type": "integer",
+      "examples": [
+        0,
+        5
+      ]
+    },
+    "TimePledged": {
+      "title": "TimePledged",
+      "description": "Time pledged in seconds",
+      "type": "integer",
+      "examples": [
+        43809417,
+        43811142,
+        43813289
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Merits",
+    "Power",
+    "Rank",
+    "TimePledged",
+    "event",
+    "timestamp"
+  ]
+}

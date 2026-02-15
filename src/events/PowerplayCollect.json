@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when collecting powerplay commodities for delivery",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Power": {
+      "title": "Power",
+      "type": "string",
+      "examples": [
+        "Li Yong-Rui",
+        "Aisling Duval",
+        "Edmund Mahon"
+      ]
+    },
+    "Type": {
+      "title": "Type",
+      "type": "string",
+      "examples": [
+        "$siriusfranchisepackage_name;",
+        "$aislingmediamaterials_name;",
+        "$alliancelegaslativerecords_name;"
+      ]
+    },
+    "Type_Localised": {
+      "title": "Type_Localised",
+      "type": "string",
+      "examples": [
+        "Sirius Franchise Package",
+        "Aisling Media Materials",
+        "Alliance Legislative Records"
+      ]
+    },
+    "Count": {
+      "title": "Count",
+      "type": "integer",
+      "examples": [
+        10,
+        50,
+        44
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Count",
+    "Power",
+    "Type",
+    "event",
+    "timestamp"
+  ]
+}

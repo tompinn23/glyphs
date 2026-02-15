@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "This event is logged when booking a taxi transport",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Cost": {
+      "title": "Cost",
+      "type": "integer",
+      "examples": [
+        100,
+        4662,
+        5941
+      ]
+    },
+    "DestinationSystem": {
+      "title": "DestinationSystem",
+      "type": "string",
+      "examples": [
+        "Sol",
+        "Latorioson",
+        "Adria"
+      ]
+    },
+    "DestinationLocation": {
+      "title": "DestinationLocation",
+      "type": "string",
+      "examples": [
+        "Seidel's Globe",
+        "Li Qing Jao",
+        "Watanabe Botanical Nursery"
+      ]
+    },
+    "Retreat": {
+      "title": "Retreat",
+      "description": "indicates if requested for exit from combat zone",
+      "type": "boolean",
+      "examples": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Cost",
+    "DestinationLocation",
+    "DestinationSystem",
+    "event",
+    "timestamp"
+  ]
+}

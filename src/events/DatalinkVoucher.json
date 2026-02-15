@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when scanning a datalink generates a reward",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Reward": {
+      "title": "Reward",
+      "type": "integer",
+      "examples": [
+        5268,
+        11787,
+        15590
+      ]
+    },
+    "VictimFaction": {
+      "title": "VictimFaction",
+      "type": "string",
+      "examples": [
+        "Empire",
+        "Alliance",
+        "Federation"
+      ]
+    },
+    "PayeeFaction": {
+      "title": "PayeeFaction",
+      "type": "string",
+      "examples": [
+        "Federation",
+        "Empire",
+        "Alliance"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "PayeeFaction",
+    "Reward",
+    "VictimFaction",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Written when transferring items between backpack and ship locker",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Transfers": {
+      "title": "Transfers",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "title": "Name",
+            "type": "string",
+            "examples": [
+              "healthpack",
+              "energycell",
+              "amm_grenade_emp"
+            ]
+          },
+          "Name_Localised": {
+            "title": "Name_Localised",
+            "type": "string",
+            "examples": [
+              "Medkit",
+              "Energy Cell",
+              "Shield Disruptor"
+            ]
+          },
+          "Category": {
+            "title": "Category",
+            "type": "string",
+            "examples": [
+              "Consumable",
+              "Component",
+              "Item"
+            ]
+          },
+          "LockerOldCount": {
+            "title": "LockerOldCount",
+            "type": "integer",
+            "examples": [
+              96,
+              94,
+              99
+            ]
+          },
+          "LockerNewCount": {
+            "title": "LockerNewCount",
+            "type": "integer",
+            "examples": [
+              95,
+              92,
+              98
+            ]
+          },
+          "Direction": {
+            "title": "Direction",
+            "type": "string",
+            "examples": [
+              "ToBackpack",
+              "ToShipLocker"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "Name",
+          "Category",
+          "LockerOldCount",
+          "LockerNewCount",
+          "Direction"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Transfers",
+    "event",
+    "timestamp"
+  ]
+}

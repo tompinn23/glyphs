@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "This event is logged when a player sells a hand weapon",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "type": "string",
+      "examples": [
+        "wpn_s_pistol_kinetic_sauto",
+        "wpn_m_assaultrifle_laser_fauto",
+        "wpn_m_assaultrifle_kinetic_fauto"
+      ]
+    },
+    "Name_Localised": {
+      "title": "Name_Localised",
+      "type": "string",
+      "examples": [
+        "Karma P-15",
+        "TK Aphelion",
+        "Karma AR-50"
+      ]
+    },
+    "Class": {
+      "title": "Class",
+      "type": "integer",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "WeaponMods": {
+      "title": "WeaponMods",
+      "type": "array",
+      "default": null,
+      "items": {
+        "type": "string",
+        "examples": [
+          "weapon_reloadspeed",
+          "weapon_handling",
+          "weapon_headshotdamage"
+        ]
+      }
+    },
+    "Price": {
+      "title": "Price",
+      "type": "integer",
+      "examples": [
+        30000,
+        75000,
+        105000
+      ]
+    },
+    "SuitModuleID": {
+      "title": "SuitModuleID",
+      "type": "integer",
+      "examples": [
+        1700368610732442,
+        1701977253349792,
+        1700210097907060
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Class",
+    "Name",
+    "Price",
+    "SuitModuleID",
+    "WeaponMods",
+    "event",
+    "timestamp"
+  ]
+}

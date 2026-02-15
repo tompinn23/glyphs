@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when a ship's fighter is rebuilt in the hangar",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Loadout": {
+      "title": "Loadout",
+      "type": "string",
+      "examples": [
+        "zero",
+        "one"
+      ]
+    },
+    "ID": {
+      "title": "ID",
+      "type": "integer",
+      "examples": [
+        68,
+        69,
+        52
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ID",
+    "Loadout",
+    "event",
+    "timestamp"
+  ]
+}

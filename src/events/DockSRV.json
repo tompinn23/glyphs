@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when docking an SRV with the ship",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "SRVType": {
+      "title": "SRVType",
+      "type": "string",
+      "examples": [
+        "combat_multicrew_srv_01",
+        "testbuggy"
+      ]
+    },
+    "SRVType_Localised": {
+      "title": "SRVType_Localised",
+      "type": "string",
+      "examples": [
+        "SRV Scorpion",
+        "SRV Scarab"
+      ]
+    },
+    "ID": {
+      "title": "ID",
+      "type": "integer",
+      "examples": [
+        33,
+        35,
+        31
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ID",
+    "event",
+    "timestamp"
+  ]
+}

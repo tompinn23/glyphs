@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "CarrierID": {
+      "title": "CarrierID",
+      "type": "integer",
+      "examples": [
+        3705124096
+      ]
+    },
+    "CarrierType": {
+      "title": "CarrierType",
+      "type": "string",
+      "examples": [
+        "FleetCarrier",
+        "SquadronCarrier"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "type": "string",
+      "examples": [
+        "Aoi TSURARA",
+        "Aoi Tsurara  ",
+        "Aoi Tsurara "
+      ]
+    },
+    "Callsign": {
+      "title": "Callsign",
+      "type": "string",
+      "examples": [
+        "X6H-B4Z"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Callsign",
+    "CarrierID",
+    "Name",
+    "event",
+    "timestamp"
+  ]
+}

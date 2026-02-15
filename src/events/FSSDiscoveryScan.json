@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when performing a full system scan (Honk)",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Progress": {
+      "title": "Progress",
+      "type": "number",
+      "examples": [
+        1.0,
+        0.391172,
+        0.263902
+      ]
+    },
+    "BodyCount": {
+      "title": "BodyCount",
+      "type": "integer",
+      "examples": [
+        14,
+        21,
+        40
+      ]
+    },
+    "NonBodyCount": {
+      "title": "NonBodyCount",
+      "type": "integer",
+      "examples": [
+        15,
+        7,
+        24
+      ]
+    },
+    "SystemName": {
+      "title": "SystemName",
+      "type": "string",
+      "examples": [
+        "HIP 21383",
+        "Turdet",
+        "Koleti"
+      ]
+    },
+    "SystemAddress": {
+      "title": "SystemAddress",
+      "type": "integer",
+      "examples": [
+        732048640355,
+        7269097743753,
+        4030600300907
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "BodyCount",
+    "NonBodyCount",
+    "Progress",
+    "SystemAddress",
+    "SystemName",
+    "event",
+    "timestamp"
+  ]
+}

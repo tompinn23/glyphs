@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "SuitID": {
+      "title": "SuitID",
+      "type": "integer",
+      "examples": [
+        1702007358392257,
+        1703514026864984,
+        1705338124035131
+      ]
+    },
+    "SuitName": {
+      "title": "SuitName",
+      "type": "string",
+      "examples": [
+        "explorationsuit_class3",
+        "tacticalsuit_class5",
+        "explorationsuit_class5"
+      ]
+    },
+    "SuitName_Localised": {
+      "title": "SuitName_Localised",
+      "type": "string",
+      "examples": [
+        "$ExplorationSuit_Class1_Name;",
+        "$TacticalSuit_Class1_Name;",
+        "$UtilitySuit_Class1_Name;"
+      ]
+    },
+    "LoadoutID": {
+      "title": "LoadoutID",
+      "type": "integer",
+      "examples": [
+        4293000004,
+        4293000002,
+        4293000000
+      ]
+    },
+    "LoadoutName": {
+      "title": "LoadoutName",
+      "type": "string",
+      "examples": [
+        "Discoverer",
+        "Scavenger",
+        "Tanky"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "LoadoutID",
+    "LoadoutName",
+    "SuitID",
+    "SuitName",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: When another player joins your ship's crew",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Telepresence": {
+      "title": "Telepresence",
+      "description": "only from Odyssey build",
+      "type": "boolean",
+      "examples": [
+        false
+      ]
+    },
+    "Crew": {
+      "title": "Crew",
+      "description": "Player's commander name",
+      "type": "string",
+      "examples": [
+        "Alice",
+        "Bob"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Crew",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When written: when the player has broken up a ‘Motherlode’ asteroid for mining",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Body": {
+      "title": "Body",
+      "type": "string",
+      "examples": [
+        "Eol Prou AA-Y c1-2 6 A Ring",
+        "Vulpecula Dark Region EL-Y c6 A 1 A Ring"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Body",
+    "event",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "When Written: when a new material is discovered",
+  "properties": {
+    "timestamp": {
+      "title": "timestamp",
+      "description": "Timestamp in UTC, ISO 8601",
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2022-09-11T22:00:45Z",
+        "2022-09-12T08:54:21Z",
+        "2022-09-12T08:54:24Z"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "examples": [
+        "AfmuRepairs",
+        "FSDJump",
+        "Location"
+      ]
+    },
+    "Category": {
+      "title": "Category",
+      "type": "string",
+      "examples": [
+        "Encoded",
+        "Manufactured",
+        "Raw"
+      ]
+    },
+    "Name": {
+      "title": "Name",
+      "type": "string",
+      "examples": [
+        "classifiedscandata",
+        "tg_shutdowndata",
+        "tg_causticgeneratorparts"
+      ]
+    },
+    "Name_Localised": {
+      "title": "Name_Localised",
+      "description": "The localised value will be omitted if it is exactly the same as Name",
+      "type": "string",
+      "examples": [
+        "Classified Scan Fragment",
+        "Massive Energy Surge Analytics",
+        "Corrosive Mechanisms"
+      ]
+    },
+    "DiscoveryNumber": {
+      "title": "DiscoveryNumber",
+      "type": "integer",
+      "examples": [
+        38,
+        39,
+        64
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Category",
+    "DiscoveryNumber",
+    "Name",
+    "event",
+    "timestamp"
+  ]
+}
