@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         # macos-15-intel is an Intel runner, macos-14 is Apple silicon
-        os: [ubuntu-latest, windows-latest, macos-15-intel, macos-14]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v5
@@ -22,6 +22,7 @@ jobs:
         uses: pypa/cibuildwheel@v3.3.1
         env:
           CIBW_BEFORE_BUILD: pip install ninja
+          CIBW_BUILD: "*x86_64*"
         # env:
         #   CIBW_SOME_OPTION: value
         #   ...
