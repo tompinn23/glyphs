@@ -47,6 +47,7 @@ target_link_libraries(events PRIVATE nlohmann_json::nlohmann_json)
 
 pybind11_add_module(_core MODULE src/python.cpp src/reader.cpp src/date/tz.cpp ${PLATFORM_SOURCE})
 target_link_libraries(_core PUBLIC efsw events nlohmann_json::nlohmann_json spdlog::spdlog re2::re2 fmt::fmt)
+target_include_directories(_core PRIVATE src/)
 install(TARGETS _core DESTINATION glyphs)
 
 
