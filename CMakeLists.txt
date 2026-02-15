@@ -45,10 +45,10 @@ endif()
 add_library(events STATIC ${EVENT_SOURCE} "src/registry.cpp")
 target_link_libraries(events PRIVATE nlohmann_json::nlohmann_json)
 
-pybind11_add_module(_core MODULE src/python.cpp src/reader.cpp ${PLATFORM_SOURCE})
+pybind11_add_module(_core MODULE src/python.cpp src/reader.cpp src/date/tz.cpp ${PLATFORM_SOURCE})
 target_link_libraries(_core PUBLIC efsw events nlohmann_json::nlohmann_json spdlog::spdlog re2::re2 fmt::fmt)
 install(TARGETS _core DESTINATION glyphs)
 
 
-add_executable(main src/main.cpp src/reader.cpp ${PLATFORM_SOURCE})
+add_executable(main src/main.cpp src/reader.cpp src/date/tz.cpp ${PLATFORM_SOURCE})
 target_link_libraries(main PUBLIC efsw events nlohmann_json::nlohmann_json spdlog::spdlog re2::re2 fmt::fmt)

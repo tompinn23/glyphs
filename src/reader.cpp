@@ -13,6 +13,8 @@
 #include <filesystem>
 #include <sys/stat.h>
 
+#include "date/date.h"
+
 #include "events/Shutdown.hpp"
 namespace fs = std::filesystem;
 
@@ -685,13 +687,13 @@ namespace hue {
     reader::timestamp reader::parse_iso8601(const std::string &s) {
         std::istringstream in{s};
         std::chrono::sys_time<std::chrono::milliseconds> tp;
-        in >> std::chrono::parse("%FT%TZ", tp);
+        in >> date::parse("%FT%TZ", tp);
         if (in.fail())
         {
             in.clear();
             in.exceptions(std::ios::failbit);
             in.str(s);
-            in >> std::chrono::parse("%FT%T%Ez", tp);
+            in >>date::parse("%FT%T%Ez", tp);
         }
         return tp;
     }
@@ -834,7 +836,7 @@ namespace hue {
 
                 event->modules.clear();
                 for (auto module: event->modules) {
-                    hue::module mod = hue::module(mod);
+                    hue::module mod = hue::module(module);
                     bool is_hardpoint = module.slot.contains("Hardpoint") && !module.slot.starts_with("TinyHardpoint");
 
                     bool ammo_clip_is_one = module.ammo_in_clip == 1 && module.ammo_in_hopper == 1;
