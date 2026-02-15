@@ -1,5 +1,5 @@
 [project]
-name = "glyphs"
+name = "raxxla"
 version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
@@ -36,4 +36,4 @@ verbose = true           # Show rebuild output
 rebuild = false          # Auto-rebuild on import
 
 [tool.uv.pip]
-no-build-isolation-package = ["glyphs",]
+no-build-isolation-package = ["raxxla",]

@@ -144,7 +144,7 @@ private:
 };
 
 PYBIND11_MODULE(_core, m) {
-    auto sink = std::make_shared<python_hue_sink>("glyphs._core");
+    auto sink = std::make_shared<python_hue_sink>("raxxla._core");
 
 
     auto l = spdlog::default_logger();
