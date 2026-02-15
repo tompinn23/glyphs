@@ -686,16 +686,18 @@ namespace hue {
 
     reader::timestamp reader::parse_iso8601(const std::string &s) {
         std::istringstream in{s};
-        std::chrono::sys_time<std::chrono::milliseconds> tp;
-        in >> date::parse("%FT%TZ", tp);
-        if (in.fail())
-        {
+        std::chrono::sys_time<std::chrono::seconds> tmp;
+        in >> date::parse("%FT%TZ", tmp);
+        if (in.fail()) {
+            std::chrono::sys_time<std::chrono::microseconds> tp;
             in.clear();
             in.exceptions(std::ios::failbit);
             in.str(s);
-            in >>date::parse("%FT%T%Ez", tp);
+            in >> date::parse("%FT%T%Ez", tp);
+            return std::chrono::time_point_cast<std::chrono::milliseconds>(tp);
+        } else {
+            return std::chrono::time_point_cast<std::chrono::milliseconds>(tmp);;
         }
-        return tp;
     }
 
     std::optional<event> reader::parse_entry(const std::string& line) {

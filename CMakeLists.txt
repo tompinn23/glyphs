@@ -53,3 +53,4 @@ install(TARGETS _core DESTINATION glyphs)
 
 add_executable(main src/main.cpp src/reader.cpp ${PLATFORM_SOURCE})
 target_link_libraries(main PUBLIC efsw events nlohmann_json::nlohmann_json spdlog::spdlog re2::re2 fmt::fmt)
+target_include_directories(main PRIVATE src/)
