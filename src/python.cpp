@@ -143,7 +143,7 @@ private:
     std::thread thr;
 };
 
-PYBIND11_MODULE(_core, m) {
+PYBIND11_MODULE(_core, m, py::mod_gil_not_used()) {
     auto sink = std::make_shared<python_hue_sink>("raxxla._core");
 
 
